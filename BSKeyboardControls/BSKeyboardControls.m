@@ -83,6 +83,9 @@ enum {
         NSArray *items = [NSArray arrayWithObjects:barSegment, flex, self.buttonDone, nil];
         self.toolbar.items = items;
         
+        // Set autoresizing (when phone rotates)
+        self.toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        
         // Add toolbar to self
         [self addSubview:self.toolbar];
     }
