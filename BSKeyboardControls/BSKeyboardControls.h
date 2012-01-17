@@ -31,16 +31,16 @@ typedef enum {
 @property (nonatomic, assign) UIBarStyle barStyle;
 
 /* The tint color of the "Previous" and the "Next" button */
-@property (nonatomic, assign) UIColor *previousNextTintColor;
+@property (nonatomic, strong) UIColor *previousNextTintColor;
 
 /* The tint color of the done button */
-@property (nonatomic, assign) UIColor *doneTintColor;
+@property (nonatomic, strong) UIColor *doneTintColor;
 
 /* The title of the "Previous" button */
-@property (nonatomic, assign) NSString *previousTitle;
+@property (nonatomic, strong) NSString *previousTitle;
 
 /* The title of the "Next" button */
-@property (nonatomic, assign) NSString *nextTitle;
+@property (nonatomic, strong) NSString *nextTitle;
 
 @end
 
