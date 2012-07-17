@@ -1,0 +1,11 @@
+/* 
+  BSKeyboardControls.strings
+  Diims
+
+  Created by Simon Støvring on 11/04/12.
+  Copyright (c) 2012 Simon Støvring. All rights reserved.
+*/
+
+"Previous"   = "Forrige";
+"Next"       = "Næste";
+"Done"       = "OK";

@@ -27,17 +27,19 @@ enum {
 
 @implementation BSKeyboardControls
 
-@synthesize delegate;
-@synthesize textFields;
-@synthesize activeTextField = activeTextField_;
-@synthesize toolbar;
-@synthesize segmentedPreviousNext;
-@synthesize buttonDone;
-@synthesize barStyle = barStyle_;
-@synthesize previousNextTintColor = previousNextTintColor_;
-@synthesize doneTintColor = doneTintColor_;
-@synthesize previousTitle = previousTitle_;
-@synthesize nextTitle = nextTitle_;
+
+@synthesize delegate = _delegate,
+            textFields = _textFields,
+            activeTextField = _activeTextField,
+            toolbar = _toolbar,
+            segmentedPreviousNext = _segmentedPreviousNext,
+            buttonDone = _buttonDone,
+            barStyle = _barStyle,
+            previousNextTintColor = _previousNextTintColor,
+            previousTitle = _previousTitle,
+            nextTitle = _nextTitle,
+            doneTitle = _doneTitle,
+            doneTintColor = _doneTintColor;
 
 /* Initialize */
 - (id)init
@@ -51,11 +53,10 @@ enum {
         // Default colors
         self.barStyle = UIBarStyleBlackTranslucent;
         self.previousNextTintColor = [UIColor blackColor];
-        self.doneTintColor = [UIColor colorWithRed:34.0/255.0 green:164.0/255.0 blue:255.0/255.0 alpha:1.0];
         
         // Default labels
-        self.previousTitle = @"Previous";
-        self.nextTitle = @"Next";
+        self.previousTitle = NSLocalizedStringFromTable(@"Previous", @"BSKeyboardControls", nil);
+        self.nextTitle = NSLocalizedStringFromTable(@"Next", @"BSKeyboardControls", nil);
         
         // Create toolbar
         self.toolbar = [[UIToolbar alloc] initWithFrame:self.frame];
@@ -76,8 +77,10 @@ enum {
         UIBarButtonItem *flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
         
         // Create done button
-        self.buttonDone = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(buttonDonePressed:)];
-        self.buttonDone.tintColor = self.doneTintColor;
+        self.buttonDone = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"Done", @"BSKeyboardControls", nil)
+                                                           style:UIBarButtonItemStyleDone
+                                                           target:self
+                                                           action:@selector(buttonDonePressed:)];
         
         // Add items to bar
         NSArray *items = [NSArray arrayWithObjects:barSegment, flex, self.buttonDone, nil];
@@ -105,6 +108,8 @@ enum {
         
         [self enableDisableButtonsForActiveTextField:self.activeTextField];
         
+        [self keyboardControlsPreviousNextPressed:self withDirection:KeyboardControlsDirectionPrevious andActiveTextField:self.activeTextField];
+        
         if ([self.delegate respondsToSelector:@selector(keyboardControlsPreviousNextPressed:withDirection:andActiveTextField:)])
             [self.delegate keyboardControlsPreviousNextPressed:self withDirection:KeyboardControlsDirectionPrevious andActiveTextField:self.activeTextField];
     }
@@ -122,6 +127,8 @@ enum {
         
         [self enableDisableButtonsForActiveTextField:self.activeTextField];
         
+        [self keyboardControlsPreviousNextPressed:self withDirection:KeyboardControlsDirectionNext andActiveTextField:self.activeTextField];
+        
         if ([self.delegate respondsToSelector:@selector(keyboardControlsPreviousNextPressed:withDirection:andActiveTextField:)])
             [self.delegate keyboardControlsPreviousNextPressed:self withDirection:KeyboardControlsDirectionNext andActiveTextField:self.activeTextField];
     }
@@ -130,6 +137,8 @@ enum {
 /* Done */
 - (void)done
 {
+    [self keyboardControlsDonePressed:self];
+    
     if ([self.delegate respondsToSelector:@selector(keyboardControlsDonePressed:)])
         [self.delegate keyboardControlsDonePressed:self];
 }
@@ -152,18 +161,47 @@ enum {
         [self.segmentedPreviousNext setEnabled:NO forSegmentAtIndex:1];
 }
 
+/* Reload text fields */
+- (void)reloadTextFields
+{
+    // Add the keyboard control as accessory view for all of the text fields
+	// Also set the delegate of all the text fields to self
+	for (id textField in self.textFields)
+	{
+	    if ([textField isKindOfClass:[UITextField class]])
+	        ((UITextField *) textField).inputAccessoryView = self;
+	    else if ([textField isKindOfClass:[UITextView class]])
+	        ((UITextView *) textField).inputAccessoryView = self;
+	}
+}
+
 #pragma mark -
 #pragma mark Getters and Setters
 
 /* Setter for self.activeTextField */
 - (void)setActiveTextField:(id)activeTextField
 {
-    activeTextField_ = activeTextField;
+    _activeTextField = activeTextField;
     [self enableDisableButtonsForActiveTextField:self.activeTextField];
 }
 
 #pragma mark -
-#pragma mark IBActions
+#pragma mark Delegation
+
+/* Done was pressed */
+- (void)keyboardControlsDonePressed:(BSKeyboardControls *)controls
+{
+    [controls.activeTextField resignFirstResponder];
+}
+
+/* Previous or next was pressed */
+- (void)keyboardControlsPreviousNextPressed:(BSKeyboardControls *)controls withDirection:(KeyboardControlsDirection)direction andActiveTextField:(id)textField
+{
+    [textField becomeFirstResponder];
+}
+
+#pragma mark -
+#pragma mark Interface Actions
 
 /* Previous / Next segmented control changed value */
 - (IBAction)segmentedControlPreviousNextChangedValue:(id)sender
@@ -192,36 +230,43 @@ enum {
 /* Set bar style */
 - (void)setBarStyle:(UIBarStyle)barStyle
 {
-    barStyle_ = barStyle;
+    _barStyle = barStyle;
     self.toolbar.barStyle = self.barStyle;
 }
 
 /* Set tint color of previous and next buttons */
 - (void)setPreviousNextTintColor:(UIColor *)previousNextTintColor
 {
-    previousNextTintColor_ = previousNextTintColor;
-    self.segmentedPreviousNext.tintColor = self.previousNextTintColor;
-}
-
-/* Set tint color of done button */
-- (void)setDoneTintColor:(UIColor *)doneTintColor
-{
-    doneTintColor_ = doneTintColor;
-    self.buttonDone.tintColor = self.doneTintColor;
+    _previousNextTintColor = previousNextTintColor;
+    self.segmentedPreviousNext.tintColor = previousNextTintColor;
 }
 
 /* Set previous title */
 - (void)setPreviousTitle:(NSString *)previousTitle
 {
-    previousTitle_ = previousTitle;
-    [self.segmentedPreviousNext setTitle:self.previousTitle forSegmentAtIndex:KeyboardControlsIndexPrevious];
+    _previousTitle = previousTitle;
+    [self.segmentedPreviousNext setTitle:previousTitle forSegmentAtIndex:KeyboardControlsIndexPrevious];
 }
 
 /* Set next title */
 - (void)setNextTitle:(NSString *)nextTitle
 {
-    nextTitle_ = nextTitle;
-    [self.segmentedPreviousNext setTitle:self.nextTitle forSegmentAtIndex:KeyboardControlsIndexNext];
+    _nextTitle = nextTitle;
+    [self.segmentedPreviousNext setTitle:nextTitle forSegmentAtIndex:KeyboardControlsIndexNext];
+}
+
+/* Set done title */
+- (void)setDoneTitle:(NSString *)doneTitle
+{
+    _doneTitle = doneTitle;
+    self.buttonDone.title = doneTitle;
+}
+
+/* Set done button tint color */
+- (void)setDoneTintColor:(UIColor *)doneTintColor
+{
+    _doneTintColor = doneTintColor;
+    self.buttonDone.tintColor = doneTintColor;
 }
 
 @end

@@ -1,5 +1,5 @@
 //
-//  IPKeyboardControls.h
+//  BSKeyboardControls.h
 //  Simon Støvring
 //
 //  Created by Simon Støvring on 09/01/12.
@@ -10,45 +10,79 @@
 
 @protocol BSKeyboardControlsDelegate;
 
-/* Used to tell whether the user pressed the "Previous" or the "Next" button */
-typedef enum {
+/* Directions */
+typedef enum
+{
     KeyboardControlsDirectionPrevious,
-    KeyboardControlsDirectionNext
+    KeyboardControlsDirectionNext,
+    KeyboardControlsDirectionSelected
 } KeyboardControlsDirection;
 
 @interface BSKeyboardControls : UIView
 
-/* The delegate (BSKeyboardControlsDelegate, see below) */
+/*
+ * Delegate
+ */
 @property (nonatomic, strong) id <BSKeyboardControlsDelegate> delegate;
 
-/* The text fields the BSKeyboardControls will handle */
+/*
+ * Text fields the controls should work on
+ * The order of this, will be the order used when the next and the previous button is pressed
+ */
 @property (nonatomic, strong) NSArray *textFields;
 
-/* The currently active text field */
+/*
+ * Currently active text field
+ */
 @property (nonatomic, strong) id activeTextField;
 
-/* The style of the UIToolbar */
+/*
+ * Style of the bar
+ */
 @property (nonatomic, assign) UIBarStyle barStyle;
 
-/* The tint color of the "Previous" and the "Next" button */
+/*
+ * Tint color of the previous and next buttons
+ */
 @property (nonatomic, strong) UIColor *previousNextTintColor;
 
-/* The tint color of the done button */
-@property (nonatomic, strong) UIColor *doneTintColor;
-
-/* The title of the "Previous" button */
+/*
+ * Title of the previous button
+ */
 @property (nonatomic, strong) NSString *previousTitle;
 
-/* The title of the "Next" button */
+/*
+ * Title of the next button
+ */
 @property (nonatomic, strong) NSString *nextTitle;
+
+/*
+ * Title of the done button
+ */
+@property (nonatomic, strong) NSString *doneTitle;
+
+/*
+ *  Tint color of the done button
+ */
+@property (nonatomic, strong) UIColor *doneTintColor;
+
+/*
+ * Reload text fields
+ */
+- (void)reloadTextFields;
 
 @end
 
+/* Delegation methods */
 @protocol BSKeyboardControlsDelegate <NSObject>
-@required
-/* Called when the user presses either the "Previous" or the "Next" button */
-- (void)keyboardControlsPreviousNextPressed:(BSKeyboardControls *)controls withDirection:(KeyboardControlsDirection)direction andActiveTextField:(id)textField;
+@optional
+/*
+ * Previous or next button was pressed
+ */
+- (void)keyboardControlsPreviousNextPressed:(BSKeyboardControls *)controls withDirection:(KeyboardControlsDirection)direction andActiveTextField:(UITextField *)textField;
 
-/* Called when the user pressed the "Done" button */
+/*
+ * Done button was pressed
+ */
 - (void)keyboardControlsDonePressed:(BSKeyboardControls *)controls;
 @end

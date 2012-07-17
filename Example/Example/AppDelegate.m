@@ -3,7 +3,7 @@
 //  Example
 //
 //  Created by Simon Støvring on 16/01/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Simon Støvring. All rights reserved.
 //
 
 #import "AppDelegate.h"
