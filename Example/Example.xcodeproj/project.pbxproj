@@ -13,26 +13,12 @@
 		5E35BC1814C46DEC0059A9E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E35BC1614C46DEC0059A9E5 /* InfoPlist.strings */; };
 		5E35BC1A14C46DEC0059A9E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E35BC1914C46DEC0059A9E5 /* main.m */; };
 		5E35BC1E14C46DEC0059A9E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E35BC1D14C46DEC0059A9E5 /* AppDelegate.m */; };
-		5E35BC2F14C46DEC0059A9E5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E35BC2E14C46DEC0059A9E5 /* SenTestingKit.framework */; };
-		5E35BC3014C46DEC0059A9E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E35BC0D14C46DEC0059A9E5 /* UIKit.framework */; };
-		5E35BC3114C46DEC0059A9E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E35BC0F14C46DEC0059A9E5 /* Foundation.framework */; };
-		5E35BC3914C46DEC0059A9E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E35BC3714C46DEC0059A9E5 /* InfoPlist.strings */; };
-		5E35BC3C14C46DEC0059A9E5 /* ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E35BC3B14C46DEC0059A9E5 /* ExampleTests.m */; };
 		5E35BC4714C46E070059A9E5 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E35BC4614C46E070059A9E5 /* MainStoryboard_iPhone.storyboard */; };
 		5E35BC4A14C46E1B0059A9E5 /* ExampleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E35BC4914C46E1B0059A9E5 /* ExampleTableViewController.m */; };
-		5E35BC4D14C46E210059A9E5 /* BSKeyboardControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E35BC4C14C46E210059A9E5 /* BSKeyboardControls.m */; };
 		5E35BC4F14C46E980059A9E5 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E35BC4E14C46E980059A9E5 /* MainStoryboard_iPad.storyboard */; };
+		5EB2E15115B7438800CDE344 /* BSKeyboardControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB2E14D15B7438800CDE344 /* BSKeyboardControls.m */; };
+		5EB2E15215B7438800CDE344 /* BSKeyboardControls.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EB2E14E15B7438800CDE344 /* BSKeyboardControls.strings */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		5E35BC3214C46DEC0059A9E5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5E35BC0014C46DEC0059A9E5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5E35BC0814C46DEC0059A9E5;
-			remoteInfo = Example;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5E35BC0914C46DEC0059A9E5 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,18 +31,15 @@
 		5E35BC1B14C46DEC0059A9E5 /* Example-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Example-Prefix.pch"; sourceTree = "<group>"; };
 		5E35BC1C14C46DEC0059A9E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5E35BC1D14C46DEC0059A9E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5E35BC2D14C46DEC0059A9E5 /* ExampleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E35BC2E14C46DEC0059A9E5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		5E35BC3614C46DEC0059A9E5 /* ExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ExampleTests-Info.plist"; sourceTree = "<group>"; };
-		5E35BC3814C46DEC0059A9E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5E35BC3A14C46DEC0059A9E5 /* ExampleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleTests.h; sourceTree = "<group>"; };
-		5E35BC3B14C46DEC0059A9E5 /* ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTests.m; sourceTree = "<group>"; };
 		5E35BC4614C46E070059A9E5 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		5E35BC4814C46E1B0059A9E5 /* ExampleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleTableViewController.h; sourceTree = "<group>"; };
 		5E35BC4914C46E1B0059A9E5 /* ExampleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleTableViewController.m; sourceTree = "<group>"; };
-		5E35BC4B14C46E210059A9E5 /* BSKeyboardControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSKeyboardControls.h; sourceTree = "<group>"; };
-		5E35BC4C14C46E210059A9E5 /* BSKeyboardControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSKeyboardControls.m; sourceTree = "<group>"; };
 		5E35BC4E14C46E980059A9E5 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		5EB2E14C15B7438800CDE344 /* BSKeyboardControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSKeyboardControls.h; sourceTree = "<group>"; };
+		5EB2E14D15B7438800CDE344 /* BSKeyboardControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSKeyboardControls.m; sourceTree = "<group>"; };
+		5EB2E14F15B7438800CDE344 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BSKeyboardControls.strings; sourceTree = "<group>"; };
+		5EB2E15015B7438800CDE344 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BSKeyboardControls.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,16 +53,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5E35BC2914C46DEC0059A9E5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5E35BC2F14C46DEC0059A9E5 /* SenTestingKit.framework in Frameworks */,
-				5E35BC3014C46DEC0059A9E5 /* UIKit.framework in Frameworks */,
-				5E35BC3114C46DEC0059A9E5 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -87,7 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				5E35BC1314C46DEC0059A9E5 /* Example */,
-				5E35BC3414C46DEC0059A9E5 /* ExampleTests */,
 				5E35BC0C14C46DEC0059A9E5 /* Frameworks */,
 				5E35BC0A14C46DEC0059A9E5 /* Products */,
 			);
@@ -97,7 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				5E35BC0914C46DEC0059A9E5 /* Example.app */,
-				5E35BC2D14C46DEC0059A9E5 /* ExampleTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,7 +87,7 @@
 		5E35BC1314C46DEC0059A9E5 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				5E35BC4514C46DF20059A9E5 /* BSKeyboardControls */,
+				5EB2E14B15B7438800CDE344 /* BSKeyboardControls */,
 				5E35BC1C14C46DEC0059A9E5 /* AppDelegate.h */,
 				5E35BC1D14C46DEC0059A9E5 /* AppDelegate.m */,
 				5E35BC4614C46E070059A9E5 /* MainStoryboard_iPhone.storyboard */,
@@ -139,32 +110,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5E35BC3414C46DEC0059A9E5 /* ExampleTests */ = {
+		5EB2E14B15B7438800CDE344 /* BSKeyboardControls */ = {
 			isa = PBXGroup;
 			children = (
-				5E35BC3A14C46DEC0059A9E5 /* ExampleTests.h */,
-				5E35BC3B14C46DEC0059A9E5 /* ExampleTests.m */,
-				5E35BC3514C46DEC0059A9E5 /* Supporting Files */,
-			);
-			path = ExampleTests;
-			sourceTree = "<group>";
-		};
-		5E35BC3514C46DEC0059A9E5 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5E35BC3614C46DEC0059A9E5 /* ExampleTests-Info.plist */,
-				5E35BC3714C46DEC0059A9E5 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		5E35BC4514C46DF20059A9E5 /* BSKeyboardControls */ = {
-			isa = PBXGroup;
-			children = (
-				5E35BC4B14C46E210059A9E5 /* BSKeyboardControls.h */,
-				5E35BC4C14C46E210059A9E5 /* BSKeyboardControls.m */,
+				5EB2E14C15B7438800CDE344 /* BSKeyboardControls.h */,
+				5EB2E14D15B7438800CDE344 /* BSKeyboardControls.m */,
+				5EB2E14E15B7438800CDE344 /* BSKeyboardControls.strings */,
 			);
 			name = BSKeyboardControls;
+			path = ../../BSKeyboardControls;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,25 +141,6 @@
 			productReference = 5E35BC0914C46DEC0059A9E5 /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5E35BC2C14C46DEC0059A9E5 /* ExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5E35BC4214C46DEC0059A9E5 /* Build configuration list for PBXNativeTarget "ExampleTests" */;
-			buildPhases = (
-				5E35BC2814C46DEC0059A9E5 /* Sources */,
-				5E35BC2914C46DEC0059A9E5 /* Frameworks */,
-				5E35BC2A14C46DEC0059A9E5 /* Resources */,
-				5E35BC2B14C46DEC0059A9E5 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5E35BC3314C46DEC0059A9E5 /* PBXTargetDependency */,
-			);
-			name = ExampleTests;
-			productName = ExampleTests;
-			productReference = 5E35BC2D14C46DEC0059A9E5 /* ExampleTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -220,6 +155,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				da,
 			);
 			mainGroup = 5E35BBFE14C46DEC0059A9E5;
 			productRefGroup = 5E35BC0A14C46DEC0059A9E5 /* Products */;
@@ -227,7 +163,6 @@
 			projectRoot = "";
 			targets = (
 				5E35BC0814C46DEC0059A9E5 /* Example */,
-				5E35BC2C14C46DEC0059A9E5 /* ExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -240,34 +175,11 @@
 				5E35BC1814C46DEC0059A9E5 /* InfoPlist.strings in Resources */,
 				5E35BC4714C46E070059A9E5 /* MainStoryboard_iPhone.storyboard in Resources */,
 				5E35BC4F14C46E980059A9E5 /* MainStoryboard_iPad.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5E35BC2A14C46DEC0059A9E5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5E35BC3914C46DEC0059A9E5 /* InfoPlist.strings in Resources */,
+				5EB2E15215B7438800CDE344 /* BSKeyboardControls.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		5E35BC2B14C46DEC0059A9E5 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5E35BC0514C46DEC0059A9E5 /* Sources */ = {
@@ -277,27 +189,11 @@
 				5E35BC1A14C46DEC0059A9E5 /* main.m in Sources */,
 				5E35BC1E14C46DEC0059A9E5 /* AppDelegate.m in Sources */,
 				5E35BC4A14C46E1B0059A9E5 /* ExampleTableViewController.m in Sources */,
-				5E35BC4D14C46E210059A9E5 /* BSKeyboardControls.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5E35BC2814C46DEC0059A9E5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5E35BC3C14C46DEC0059A9E5 /* ExampleTests.m in Sources */,
+				5EB2E15115B7438800CDE344 /* BSKeyboardControls.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		5E35BC3314C46DEC0059A9E5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5E35BC0814C46DEC0059A9E5 /* Example */;
-			targetProxy = 5E35BC3214C46DEC0059A9E5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5E35BC1614C46DEC0059A9E5 /* InfoPlist.strings */ = {
@@ -308,12 +204,13 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		5E35BC3714C46DEC0059A9E5 /* InfoPlist.strings */ = {
+		5EB2E14E15B7438800CDE344 /* BSKeyboardControls.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5E35BC3814C46DEC0059A9E5 /* en */,
+				5EB2E14F15B7438800CDE344 /* da */,
+				5EB2E15015B7438800CDE344 /* en */,
 			);
-			name = InfoPlist.strings;
+			name = BSKeyboardControls.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -390,40 +287,6 @@
 			};
 			name = Release;
 		};
-		5E35BC4314C46DEC0059A9E5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Example/Example-Prefix.pch";
-				INFOPLIST_FILE = "ExampleTests/ExampleTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		5E35BC4414C46DEC0059A9E5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Example/Example-Prefix.pch";
-				INFOPLIST_FILE = "ExampleTests/ExampleTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -441,15 +304,6 @@
 			buildConfigurations = (
 				5E35BC4014C46DEC0059A9E5 /* Debug */,
 				5E35BC4114C46DEC0059A9E5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5E35BC4214C46DEC0059A9E5 /* Build configuration list for PBXNativeTarget "ExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5E35BC4314C46DEC0059A9E5 /* Debug */,
-				5E35BC4414C46DEC0059A9E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
