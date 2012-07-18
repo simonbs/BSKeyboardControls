@@ -1,6 +1,6 @@
 //
 //  BSKeyboardControls.m
-//  Simon Støvring
+//  BSKeyboardControls
 //
 //  Created by Simon Støvring on 09/01/12.
 //  Copyright (c) 2012 Simon B. Støvring. All rights reserved.

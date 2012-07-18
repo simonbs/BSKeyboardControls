@@ -1,9 +1,9 @@
 //
 //  BSKeyboardControls.h
-//  Simon Støvring
+//  BSKeyboardControls
 //
 //  Created by Simon Støvring on 09/01/12.
-//  Copyright (c) 2012 Simon Støvring. All rights reserved.
+//  Copyright (c) 2012 Simon B. Støvring. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
