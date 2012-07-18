@@ -1,7 +1,7 @@
 Installation
 ====================
 
-The easiest way to use BSKeyboardControls is to copy the files in `BSKeyboardControls/` into your Xcode projekt.
+The easiest way to use BSKeyboardControls is to copy the files in `BSKeyboardControls/` into your Xcode project.
 
 1. In Finder, navigate to your `BSKeyboardControls` directory
 2. Drag the complete directory into Xcode
