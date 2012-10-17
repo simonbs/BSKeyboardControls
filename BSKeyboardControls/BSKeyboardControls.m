@@ -175,6 +175,12 @@ enum {
 	}
 }
 
+/* Previous / Next controls are shown by default, but may be hidden */
+- (void)hidePrevNextButtons: (BOOL)isHidden
+{
+    self.segmentedPreviousNext.hidden = isHidden;
+}
+
 #pragma mark -
 #pragma mark Getters and Setters
 
