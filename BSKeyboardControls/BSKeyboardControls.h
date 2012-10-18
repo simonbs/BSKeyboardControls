@@ -71,6 +71,11 @@ typedef enum
  */
 - (void)reloadTextFields;
 
+/*
+ * Allow hiding of previous / next buttons
+ */
+- (void)hidePrevNextButtons: (BOOL)isHidden;
+
 @end
 
 /* Delegation methods */
