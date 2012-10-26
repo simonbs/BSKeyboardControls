@@ -23,7 +23,7 @@ typedef enum
 /*
  * Delegate
  */
-@property (nonatomic, strong) id <BSKeyboardControlsDelegate> delegate;
+@property (nonatomic, weak) id <BSKeyboardControlsDelegate> delegate;
 
 /*
  * Text fields the controls should work on
