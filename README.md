@@ -38,8 +38,6 @@ Below is an example on how to setup the keyboard controls. The below example ass
     
     [self setKeyboardControls:[[BSKeyboardControls alloc] initWithFields:fields]];
     [self.keyboardControls setDelegate:self];
-
-Alternatively you can call `[self.keyboardControls registerFieldsInView:self.view];` which will recursively find all instances of UITextField and UITextView and set their input accessory view to the instance of the keyboard controls. Note that this doesn’t work well with table views as it will only find the fields in the visible cells.
 	
 Next you will have to set up the delegation methods. BSKeyboardControls requires three delegates: `BSKeyboardControlsDelegate`, `UITextFieldDelegate` and `UITextViewDelegate`.
 
