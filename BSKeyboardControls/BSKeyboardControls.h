@@ -99,16 +99,6 @@ typedef enum
  */
 - (id)initWithFields:(NSArray *)fields;
 
-/**
- *  Registers all text fields in a view. Thereby it is not necessary to set the fields property.
- *  The fields found will automatically have the input accessory view set to
- *  the instance of the controls.
- *  Note that this method is not ideal in a UITableView as fields in cells which are not visible
- *  cannot be found and is therefore not registered.
- *  @param view View to find fields in. Both instances of UITextField and UITextView will be found.
- */
-- (void)registerFieldsInView:(UIView *)view;
-
 @end
 
 @protocol BSKeyboardControlsDelegate <NSObject>

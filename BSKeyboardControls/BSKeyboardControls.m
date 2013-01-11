@@ -12,7 +12,6 @@
 @property (nonatomic, strong) UIToolbar *toolbar;
 @property (nonatomic, strong) UISegmentedControl *segmentedControl;
 @property (nonatomic, strong) UIBarButtonItem *doneButton;
-@property (nonatomic, strong) NSMutableArray *mutableFields;
 @property (nonatomic, strong) UIBarButtonItem *segmentedControlItem;
 @end
 
@@ -65,7 +64,6 @@
 - (void)dealloc
 {
     [self setFields:nil];
-    [self setMutableFields:nil];
     [self setSegmentedControlTintControl:nil];
     [self setPreviousTitle:nil];
     [self setBarTintColor:nil];
@@ -100,34 +98,24 @@
     }
 }
 
-- (void)registerFieldsInView:(UIView *)view
-{
-    [self addFieldsFromView:view];
-    
-    NSArray *reversed = [[self.fields reverseObjectEnumerator] allObjects];
-    [self setFields:[NSMutableArray arrayWithArray:reversed]];
-}
-
 - (void)setFields:(NSArray *)fields
 {
-    [self setMutableFields:[NSArray arrayWithArray:fields]];
-    
-    for (UIView *field in fields)
+    if (fields != _fields)
     {
-        if ([field isKindOfClass:[UITextField class]])
+        for (UIView *field in fields)
         {
-            [(UITextField *)field setInputAccessoryView:self];
+            if ([field isKindOfClass:[UITextField class]])
+            {
+                [(UITextField *)field setInputAccessoryView:self];
+            }
+            else if ([field isKindOfClass:[UITextView class]])
+            {
+                [(UITextView *)field setInputAccessoryView:self];
+            }
         }
-        else if ([field isKindOfClass:[UITextView class]])
-        {
-            [(UITextView *)field setInputAccessoryView:self];
-        }
+        
+        _fields = fields;
     }
-}
-
-- (NSArray *)fields
-{
-    return self.mutableFields;
 }
 
 - (void)setBarStyle:(UIBarStyle)barStyle
@@ -274,21 +262,6 @@
         if ([self.delegate respondsToSelector:@selector(keyboardControls:selectedField:inDirection:)])
         {
             [self.delegate keyboardControls:self selectedField:field inDirection:BSKeyboardControlsDirectionNext];
-        }
-    }
-}
-
-- (void)addFieldsFromView:(UIView *)view
-{
-    for (UIView *subview in view.subviews)
-    {
-        if ([subview isKindOfClass:[UITextField class]] || [subview isKindOfClass:[UITextView class]])
-        {
-            [self.mutableFields addObject:subview];
-        }
-        else
-        {
-            [self addFieldsFromView:subview];
         }
     }
 }
