@@ -13,9 +13,10 @@
 		5E35BC1814C46DEC0059A9E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E35BC1614C46DEC0059A9E5 /* InfoPlist.strings */; };
 		5E35BC1A14C46DEC0059A9E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E35BC1914C46DEC0059A9E5 /* main.m */; };
 		5E35BC1E14C46DEC0059A9E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E35BC1D14C46DEC0059A9E5 /* AppDelegate.m */; };
-		5E35BC4714C46E070059A9E5 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E35BC4614C46E070059A9E5 /* MainStoryboard_iPhone.storyboard */; };
-		5E35BC4A14C46E1B0059A9E5 /* ExampleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E35BC4914C46E1B0059A9E5 /* ExampleTableViewController.m */; };
-		5E35BC4F14C46E980059A9E5 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E35BC4E14C46E980059A9E5 /* MainStoryboard_iPad.storyboard */; };
+		5E8E327316A01E8900D8DB8B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8E327216A01E8900D8DB8B /* ViewController.m */; };
+		5E8E327816A01EE400D8DB8B /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E8E327416A01EE400D8DB8B /* MainStoryboard_iPad.storyboard */; };
+		5E8E327916A01EE400D8DB8B /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E8E327616A01EE400D8DB8B /* MainStoryboard_iPhone.storyboard */; };
+		5E8E327B16A01F0A00D8DB8B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E8E327A16A01F0A00D8DB8B /* Default-568h@2x.png */; };
 		5EB2E15115B7438800CDE344 /* BSKeyboardControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB2E14D15B7438800CDE344 /* BSKeyboardControls.m */; };
 		5EB2E15215B7438800CDE344 /* BSKeyboardControls.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EB2E14E15B7438800CDE344 /* BSKeyboardControls.strings */; };
 /* End PBXBuildFile section */
@@ -32,10 +33,11 @@
 		5E35BC1C14C46DEC0059A9E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5E35BC1D14C46DEC0059A9E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5E35BC2E14C46DEC0059A9E5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		5E35BC4614C46E070059A9E5 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		5E35BC4814C46E1B0059A9E5 /* ExampleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExampleTableViewController.h; sourceTree = "<group>"; };
-		5E35BC4914C46E1B0059A9E5 /* ExampleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleTableViewController.m; sourceTree = "<group>"; };
-		5E35BC4E14C46E980059A9E5 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		5E8E327116A01E8900D8DB8B /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5E8E327216A01E8900D8DB8B /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5E8E327516A01EE400D8DB8B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		5E8E327716A01EE400D8DB8B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		5E8E327A16A01F0A00D8DB8B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		5EB2E14C15B7438800CDE344 /* BSKeyboardControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSKeyboardControls.h; sourceTree = "<group>"; };
 		5EB2E14D15B7438800CDE344 /* BSKeyboardControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSKeyboardControls.m; sourceTree = "<group>"; };
 		5EB2E14F15B7438800CDE344 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BSKeyboardControls.strings; sourceTree = "<group>"; };
@@ -90,10 +92,10 @@
 				5EB2E14B15B7438800CDE344 /* BSKeyboardControls */,
 				5E35BC1C14C46DEC0059A9E5 /* AppDelegate.h */,
 				5E35BC1D14C46DEC0059A9E5 /* AppDelegate.m */,
-				5E35BC4614C46E070059A9E5 /* MainStoryboard_iPhone.storyboard */,
-				5E35BC4E14C46E980059A9E5 /* MainStoryboard_iPad.storyboard */,
-				5E35BC4814C46E1B0059A9E5 /* ExampleTableViewController.h */,
-				5E35BC4914C46E1B0059A9E5 /* ExampleTableViewController.m */,
+				5E8E327416A01EE400D8DB8B /* MainStoryboard_iPad.storyboard */,
+				5E8E327616A01EE400D8DB8B /* MainStoryboard_iPhone.storyboard */,
+				5E8E327116A01E8900D8DB8B /* ViewController.h */,
+				5E8E327216A01E8900D8DB8B /* ViewController.m */,
 				5E35BC1414C46DEC0059A9E5 /* Supporting Files */,
 			);
 			path = Example;
@@ -106,6 +108,7 @@
 				5E35BC1614C46DEC0059A9E5 /* InfoPlist.strings */,
 				5E35BC1914C46DEC0059A9E5 /* main.m */,
 				5E35BC1B14C46DEC0059A9E5 /* Example-Prefix.pch */,
+				5E8E327A16A01F0A00D8DB8B /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -173,9 +176,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E35BC1814C46DEC0059A9E5 /* InfoPlist.strings in Resources */,
-				5E35BC4714C46E070059A9E5 /* MainStoryboard_iPhone.storyboard in Resources */,
-				5E35BC4F14C46E980059A9E5 /* MainStoryboard_iPad.storyboard in Resources */,
 				5EB2E15215B7438800CDE344 /* BSKeyboardControls.strings in Resources */,
+				5E8E327816A01EE400D8DB8B /* MainStoryboard_iPad.storyboard in Resources */,
+				5E8E327916A01EE400D8DB8B /* MainStoryboard_iPhone.storyboard in Resources */,
+				5E8E327B16A01F0A00D8DB8B /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,8 +192,8 @@
 			files = (
 				5E35BC1A14C46DEC0059A9E5 /* main.m in Sources */,
 				5E35BC1E14C46DEC0059A9E5 /* AppDelegate.m in Sources */,
-				5E35BC4A14C46E1B0059A9E5 /* ExampleTableViewController.m in Sources */,
 				5EB2E15115B7438800CDE344 /* BSKeyboardControls.m in Sources */,
+				5E8E327316A01E8900D8DB8B /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +206,22 @@
 				5E35BC1714C46DEC0059A9E5 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5E8E327416A01EE400D8DB8B /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E8E327516A01EE400D8DB8B /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		5E8E327616A01EE400D8DB8B /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E8E327716A01EE400D8DB8B /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 		5EB2E14E15B7438800CDE344 /* BSKeyboardControls.strings */ = {

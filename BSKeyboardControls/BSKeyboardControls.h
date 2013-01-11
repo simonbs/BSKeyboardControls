@@ -9,6 +9,15 @@
 #import <UIKit/UIKit.h>
 
 /**
+ *  Available controls.
+ */
+typedef enum
+{
+    BSKeyboardControlPreviousNext = 1 << 0,
+    BSKeyboardControlDone = 1 << 1
+} BSKeyboardControl;
+
+/**
  *  Directions in which the fields can be selected.
  *  These are relative to the active field.
  */
@@ -26,6 +35,11 @@ typedef enum
  *  Delegate to send callbacks to.
  */
 @property (nonatomic, weak) id <BSKeyboardControlsDelegate> delegate;
+
+/**
+ *  Visible controls. Use a bitmask to show multiple controls.
+ */
+@property (nonatomic, assign) BSKeyboardControl visibleControls;
 
 /**
  *  Fields which the controls should handle.
@@ -112,5 +126,5 @@ typedef enum
  *  Called when the done button was pressed.
  *  @param keyboardControls The instance of keyboard controls.
  */
-- (void)keyboardControlsDonePressed:(BSKeyboardControls *)keyboardConrols;
+- (void)keyboardControlsDonePressed:(BSKeyboardControls *)keyboardControls;
 @end

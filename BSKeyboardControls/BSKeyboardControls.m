@@ -13,6 +13,7 @@
 @property (nonatomic, strong) UISegmentedControl *segmentedControl;
 @property (nonatomic, strong) UIBarButtonItem *doneButton;
 @property (nonatomic, strong) NSMutableArray *mutableFields;
+@property (nonatomic, strong) UIBarButtonItem *segmentedControlItem;
 @end
 
 @implementation BSKeyboardControls
@@ -46,15 +47,14 @@
         [self.segmentedControl setSegmentedControlStyle:UISegmentedControlStyleBar];
         [self.segmentedControl setEnabled:NO forSegmentAtIndex:BSKeyboardControlsDirectionPrevious];
         [self.segmentedControl setEnabled:NO forSegmentAtIndex:BSKeyboardControlsDirectionNext];
+        [self setSegmentedControlItem:[[UIBarButtonItem alloc] initWithCustomView:self.segmentedControl]];
         
         [self setDoneButton:[[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"Done", @"BSKeyboardControls", @"Done button title.")
                                                              style:UIBarButtonItemStyleDone
                                                             target:self
                                                             action:@selector(doneButtonPressed:)]];
         
-        [self.toolbar setItems:@[ [[UIBarButtonItem alloc] initWithCustomView:self.segmentedControl],
-                                  [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
-                                  self.doneButton ]];
+        [self setVisibleControls:(BSKeyboardControlPreviousNext | BSKeyboardControlDone)];
         
         [self setFields:fields];
     }
@@ -75,6 +75,7 @@
     [self setActiveField:nil];
     [self setToolbar:nil];
     [self setSegmentedControl:nil];
+    [self setSegmentedControlItem:nil];
     [self setDoneButton:nil];
 }
 
@@ -199,6 +200,16 @@
     }
 }
 
+- (void)setVisibleControls:(BSKeyboardControl)visibleControls
+{
+    if (visibleControls != _visibleControls)
+    {
+        _visibleControls = visibleControls;
+
+        [self.toolbar setItems:[self toolbarItems]];
+    }
+}
+
 #pragma mark -
 #pragma mark Private Methods
 
@@ -280,6 +291,23 @@
             [self addFieldsFromView:subview];
         }
     }
+}
+
+- (NSArray *)toolbarItems
+{
+    NSMutableArray *items = [NSMutableArray arrayWithCapacity:3];
+    if (self.visibleControls & BSKeyboardControlPreviousNext)
+    {
+        [items addObject:self.segmentedControlItem];
+    }
+    
+    if (self.visibleControls & BSKeyboardControlDone)
+    {
+        [items addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil]];
+        [items addObject:self.doneButton];
+    }
+    
+    return items;
 }
 
 @end
