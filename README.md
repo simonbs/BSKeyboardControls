@@ -45,7 +45,7 @@ Next you will have to set up the delegation methods. BSKeyboardControls requires
 
 First you want to close the keyboard if the user presses the "Done button".
 
-	- (void)keyboardControlsDonePressed:(BSKeyboardControls *)keyboardConrols
+	- (void)keyboardControlsDonePressed:(BSKeyboardControls *)keyboardControls
 	{
     	[keyboardControls.activeField resignFirstResponder];
 	}
