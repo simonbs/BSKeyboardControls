@@ -47,7 +47,7 @@ First you want to close the keyboard if the user presses the "Done button".
 
 	- (void)keyboardControlsDonePressed:(BSKeyboardControls *)keyboardConrols
 	{
-    	[keyboardConrols.activeField resignFirstResponder];
+    	[keyboardControls.activeField resignFirstResponder];
 	}
 	
 Next you want the view to scroll whenever a field is selected. There are a lot of ways to do this and you may have to tweak this.
@@ -99,17 +99,14 @@ This is all there is for the `BSKeyboardControlsDelegate`. Now you want to set u
 
 	- (void)textFieldDidBeginEditing:(UITextField *)textField
 	{
-	    if ([self.keyboardControls.textFields containsObject:textField])
-	        self.keyboardControls.activeTextField = textField;
+    	[self.keyboardControls setActiveField:textField];
 	}
 	
 Next you set up the `- (void)textViewDidBeginEditing:` method of the `UITextViewDelegate`. This is entirely similar to the `UITextFieldDelegate`.
 
 	- (void)textViewDidBeginEditing:(UITextView *)textView
 	{
-	    if ([self.keyboardControls.textFields containsObject:textView])
-	        self.keyboardControls.activeTextField = textView;
-	    [self scrollViewToTextField:textView];
+    	[self.keyboardControls setActiveField:textView];
 	}
 	
 Now you are ready to use BSKeyboardControls. For more information on how to use BSKeyboardControls, please see `Example.xcodeproj`.
