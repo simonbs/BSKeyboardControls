@@ -66,6 +66,11 @@ enum
     [self setKeyboardControls:nil];
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad || toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
 #pragma mark -
 #pragma mark Text Field Delegate
 
@@ -91,9 +96,9 @@ enum
     [self.tableView scrollRectToVisible:view.frame animated:YES];
 }
 
-- (void)keyboardControlsDonePressed:(BSKeyboardControls *)keyboardConrols
+- (void)keyboardControlsDonePressed:(BSKeyboardControls *)keyboardControls
 {
-    [keyboardConrols.activeField resignFirstResponder];
+    [keyboardControls.activeField resignFirstResponder];
 }
 
 #pragma mark -
