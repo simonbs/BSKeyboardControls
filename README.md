@@ -50,7 +50,7 @@ First you want to close the keyboard if the user presses the "Done button".
 	
 Next you want the view to scroll whenever a field is selected. There are a lot of ways to do this and you may have to tweak this.
 
-	- (void)keyboardControls:(BSKeyboardControls *)keyboardControls directionPressed (BSKeyboardControlsDirection)direction
+	- (void)keyboardControls:(BSKeyboardControls *)keyboardControls selectedField:(UIView *)field inDirection:(BSKeyboardControlsDirection)direction
 	{
     	UIView *view = keyboardControls.activeField.superview.superview;
 	    [self.tableView scrollRectToVisible:view.frame animated:YES];
