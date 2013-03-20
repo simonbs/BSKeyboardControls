@@ -90,7 +90,7 @@ enum
 #pragma mark -
 #pragma mark Keyboard Controls Delegate
 
-- (void)keyboardControls:(BSKeyboardControls *)keyboardControls directionPressed:(BSKeyboardControlsDirection)direction
+- (void)keyboardControls:(BSKeyboardControls *)keyboardControls selectedField:(UIView *)field inDirection:(BSKeyboardControlsDirection)direction
 {
     UIView *view = keyboardControls.activeField.superview.superview;
     [self.tableView scrollRectToVisible:view.frame animated:YES];
