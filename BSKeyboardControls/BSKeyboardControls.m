@@ -84,16 +84,19 @@
 {
     if (activeField != _activeField)
     {
-        if ([self.fields containsObject:activeField])
+        if (!activeField || [self.fields containsObject:activeField] ||)
         {
             _activeField = activeField;
         
-            if (![activeField isFirstResponder])
+            if (activeField)
             {
-                [activeField becomeFirstResponder];
+                if (![activeField isFirstResponder])
+                {
+                    [activeField becomeFirstResponder];
+                }
+            
+                [self updateSegmentedControlEnabledStates];
             }
-        
-            [self updateSegmentedControlEnabledStates];
         }
     }
 }
