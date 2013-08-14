@@ -84,7 +84,7 @@
 {
     if (activeField != _activeField)
     {
-        if (!activeField || [self.fields containsObject:activeField] ||)
+        if (!activeField || [self.fields containsObject:activeField])
         {
             _activeField = activeField;
         
