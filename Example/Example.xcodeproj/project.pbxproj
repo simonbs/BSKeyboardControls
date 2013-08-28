@@ -42,6 +42,7 @@
 		5EB2E14D15B7438800CDE344 /* BSKeyboardControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSKeyboardControls.m; sourceTree = "<group>"; };
 		5EB2E14F15B7438800CDE344 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/BSKeyboardControls.strings; sourceTree = "<group>"; };
 		5EB2E15015B7438800CDE344 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BSKeyboardControls.strings; sourceTree = "<group>"; };
+		7209407117CE250700EE7013 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/BSKeyboardControls.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +160,7 @@
 			knownRegions = (
 				en,
 				da,
+				sv,
 			);
 			mainGroup = 5E35BBFE14C46DEC0059A9E5;
 			productRefGroup = 5E35BC0A14C46DEC0059A9E5 /* Products */;
@@ -229,6 +231,7 @@
 			children = (
 				5EB2E14F15B7438800CDE344 /* da */,
 				5EB2E15015B7438800CDE344 /* en */,
+				7209407117CE250700EE7013 /* sv */,
 			);
 			name = BSKeyboardControls.strings;
 			sourceTree = "<group>";
