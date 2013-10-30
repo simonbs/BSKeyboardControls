@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "BSKeyboardControls.h"
 
+#define SYSTEM_VERSION_LESS_THAN(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+
 static NSString *kDeveloperUrl = @"http://twitter.com/simonbs";
 
 enum
@@ -91,15 +93,23 @@ enum
 #pragma mark Keyboard Controls Delegate
 
 - (void)keyboardControls:(BSKeyboardControls *)keyboardControls selectedField:(UIView *)field inDirection:(BSKeyboardControlsDirection)direction
-{
-    UIView *view = keyboardControls.activeField.superview.superview;
+{    
+    UIView *view;
+    
+    if (SYSTEM_VERSION_LESS_THAN(@"7.0")) {
+        view = field.superview.superview;
+    } else {
+        view = field.superview.superview.superview;
+    }
+    
     [self.tableView scrollRectToVisible:view.frame animated:YES];
 }
 
 - (void)keyboardControlsDonePressed:(BSKeyboardControls *)keyboardControls
 {
-    [keyboardControls.activeField resignFirstResponder];
+    [self.view endEditing:YES];
 }
+
 
 #pragma mark -
 #pragma mark Table View Delegate
