@@ -22,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		186F36A6182A24D700DF6276 /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = "ru-RU.lproj/BSKeyboardControls.strings"; sourceTree = "<group>"; };
+		186F36A7182A263C00DF6276 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/BSKeyboardControls.strings; sourceTree = "<group>"; };
 		5E35BC0914C46DEC0059A9E5 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E35BC0D14C46DEC0059A9E5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5E35BC0F14C46DEC0059A9E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -163,6 +165,8 @@
 				da,
 				sv,
 				pt,
+				"ru-RU",
+				ru,
 			);
 			mainGroup = 5E35BBFE14C46DEC0059A9E5;
 			productRefGroup = 5E35BC0A14C46DEC0059A9E5 /* Products */;
@@ -235,6 +239,8 @@
 				5EB2E15015B7438800CDE344 /* en */,
 				7209407117CE250700EE7013 /* sv */,
 				E100EFAA1819B60500E07440 /* pt */,
+				186F36A6182A24D700DF6276 /* ru-RU */,
+				186F36A7182A263C00DF6276 /* ru */,
 			);
 			name = BSKeyboardControls.strings;
 			sourceTree = "<group>";
