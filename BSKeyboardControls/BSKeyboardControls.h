@@ -29,7 +29,7 @@ typedef enum
 
 @protocol BSKeyboardControlsDelegate;
 
-@interface BSKeyboardControls : UIView
+@interface BSKeyboardControls : UIView <UIInputViewAudioFeedback>
 
 /**
  *  Delegate to send callbacks to.

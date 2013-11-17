@@ -17,6 +17,12 @@
 
 @implementation BSKeyboardControls
 
+
+- (BOOL) enableInputClicksWhenVisible {
+	return YES;
+}
+
+
 #pragma mark -
 #pragma mark Lifecycle
 
@@ -206,6 +212,8 @@
 
 - (void)segmentedControlValueChanged:(id)sender
 {
+	[[UIDevice currentDevice] playInputClick];
+	
     switch (self.segmentedControl.selectedSegmentIndex)
     {
         case BSKeyboardControlsDirectionPrevious:
