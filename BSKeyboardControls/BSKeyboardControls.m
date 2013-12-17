@@ -35,7 +35,7 @@
     if (self = [super initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 44.0f)])
     {
         [self setToolbar:[[UIToolbar alloc] initWithFrame:self.frame]];
-        [self.toolbar setBarStyle:UIBarStyleBlackTranslucent];
+        [self setBarStyle:UIBarStyleBlackTranslucent];
         [self.toolbar setAutoresizingMask:(UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth)];
         [self addSubview:self.toolbar];
         
