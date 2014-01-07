@@ -68,17 +68,17 @@ typedef enum
 @property (nonatomic, strong) UIColor *barTintColor;
 
 /**
- *  Tint color of the segmented control.
+ *  Tint color of the segmented control. iOS 6 Only.
  */
 @property (nonatomic, strong) UIColor *segmentedControlTintControl;
 
 /**
- *  Title of the previous button. If this is not set, a default localized title will be used.
+ *  Title of the previous button. If this is not set, a default localized title will be used. iOS 6 Only.
  */
 @property (nonatomic, strong) NSString *previousTitle;
 
 /**
- *  Title of the next button. If this is not set, a default localized title will be used.
+ *  Title of the next button. If this is not set, a default localized title will be used. iOS 6 Only.
  */
 @property (nonatomic, strong) NSString *nextTitle;
 

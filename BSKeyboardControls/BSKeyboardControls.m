@@ -11,6 +11,8 @@
 @interface BSKeyboardControls ()
 @property (nonatomic, strong) UIToolbar *toolbar;
 @property (nonatomic, strong) UISegmentedControl *segmentedControl;
+@property (nonatomic, strong) UIBarButtonItem *leftArrowButton;
+@property (nonatomic, strong) UIBarButtonItem *rightArrowButton;
 @property (nonatomic, strong) UIBarButtonItem *doneButton;
 @property (nonatomic, strong) UIBarButtonItem *segmentedControlItem;
 @end
@@ -35,18 +37,28 @@
     if (self = [super initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 44.0f)])
     {
         [self setToolbar:[[UIToolbar alloc] initWithFrame:self.frame]];
-        [self setBarStyle:UIBarStyleBlackTranslucent];
         [self.toolbar setAutoresizingMask:(UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth)];
         [self addSubview:self.toolbar];
         
-        [self setSegmentedControl:[[UISegmentedControl alloc] initWithItems:@[ NSLocalizedStringFromTable(@"Previous", @"BSKeyboardControls", @"Previous button title."),
-                                                                               NSLocalizedStringFromTable(@"Next", @"BSKeyboardControls", @"Next button title.") ]]];
-        [self.segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:UIControlEventValueChanged];
-        [self.segmentedControl setMomentary:YES];
-        [self.segmentedControl setSegmentedControlStyle:UISegmentedControlStyleBar];
-        [self.segmentedControl setEnabled:NO forSegmentAtIndex:BSKeyboardControlsDirectionPrevious];
-        [self.segmentedControl setEnabled:NO forSegmentAtIndex:BSKeyboardControlsDirectionNext];
-        [self setSegmentedControlItem:[[UIBarButtonItem alloc] initWithCustomView:self.segmentedControl]];
+        if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
+            [self setLeftArrowButton:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:105 target:self action:@selector(selectPreviousField)]];
+            [self.leftArrowButton setEnabled:NO];
+            [self.rightArrowButton setEnabled:NO];
+            [self setRightArrowButton:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:106 target:self action:@selector(selectNextField)]];
+            
+        } else {
+            [self setBarStyle:UIBarStyleBlackTranslucent];
+            
+            [self setSegmentedControl:[[UISegmentedControl alloc] initWithItems:@[ NSLocalizedStringFromTable(@"Previous", @"BSKeyboardControls", @"Previous button title."),
+                                                                                   NSLocalizedStringFromTable(@"Next", @"BSKeyboardControls", @"Next button title.") ]]];
+            [self.segmentedControl addTarget:self action:@selector(segmentedControlValueChanged:) forControlEvents:UIControlEventValueChanged];
+            
+            [self.segmentedControl setMomentary:YES];
+            [self.segmentedControl setSegmentedControlStyle:UISegmentedControlStyleBar];
+            [self.segmentedControl setEnabled:NO forSegmentAtIndex:BSKeyboardControlsDirectionPrevious];
+            [self.segmentedControl setEnabled:NO forSegmentAtIndex:BSKeyboardControlsDirectionNext];
+            [self setSegmentedControlItem:[[UIBarButtonItem alloc] initWithCustomView:self.segmentedControl]];
+        }
         
         [self setDoneButton:[[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"Done", @"BSKeyboardControls", @"Done button title.")
                                                              style:UIBarButtonItemStyleDone
@@ -72,6 +84,8 @@
     [self setDoneTintColor:nil];
     [self setActiveField:nil];
     [self setToolbar:nil];
+    [self setRightArrowButton:nil];
+    [self setLeftArrowButton:nil];
     [self setSegmentedControl:nil];
     [self setSegmentedControlItem:nil];
     [self setDoneButton:nil];
@@ -95,7 +109,7 @@
                     [activeField becomeFirstResponder];
                 }
             
-                [self updateSegmentedControlEnabledStates];
+                [self updatePrevoidNextEnabledStates];
             }
         }
     }
@@ -227,13 +241,18 @@
     }
 }
 
-- (void)updateSegmentedControlEnabledStates
+- (void)updatePrevoidNextEnabledStates
 {
     NSInteger index = [self.fields indexOfObject:self.activeField];
     if (index != NSNotFound)
     {
-        [self.segmentedControl setEnabled:(index > 0) forSegmentAtIndex:BSKeyboardControlsDirectionPrevious];
-        [self.segmentedControl setEnabled:(index < [self.fields count] - 1) forSegmentAtIndex:BSKeyboardControlsDirectionNext];
+        if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
+            [self.leftArrowButton setEnabled:(index > 0)];
+            [self.rightArrowButton setEnabled:(index < [self.fields count] - 1)];
+        } else {
+            [self.segmentedControl setEnabled:(index > 0) forSegmentAtIndex:BSKeyboardControlsDirectionPrevious];
+            [self.segmentedControl setEnabled:(index < [self.fields count] - 1) forSegmentAtIndex:BSKeyboardControlsDirectionNext];
+        }
     }
 }
 
@@ -272,9 +291,21 @@
 - (NSArray *)toolbarItems
 {
     NSMutableArray *items = [NSMutableArray arrayWithCapacity:3];
-    if (self.visibleControls & BSKeyboardControlPreviousNext)
-    {
-        [items addObject:self.segmentedControlItem];
+    
+    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
+        if (self.visibleControls & BSKeyboardControlPreviousNext)
+        {
+            UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+            fixedSpace.width = 22.0;
+            [items addObjectsFromArray:@[self.leftArrowButton,
+                                         fixedSpace,
+                                         self.rightArrowButton]];
+        }
+    } else {
+        if (self.visibleControls & BSKeyboardControlPreviousNext)
+        {
+            [items addObject:self.segmentedControlItem];
+        }
     }
     
     if (self.visibleControls & BSKeyboardControlDone)
