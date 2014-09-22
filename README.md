@@ -15,6 +15,10 @@ The easiest way to use BSKeyboardControls is to copy the files in `BSKeyboardCon
 1. In Finder, navigate to your `BSKeyboardControls` directory
 2. Drag the complete directory into Xcode
 
+*OR*
+
+1. Add `pod 'BSKeyboardControls', '~> 2.2'` to your `Podfile`
+
 Usage
 ====================
 
