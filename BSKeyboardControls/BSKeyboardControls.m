@@ -46,6 +46,7 @@
         [self.toolbar setAutoresizingMask:(UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth)];
         [self addSubview:self.toolbar];
         
+		#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
         if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
             [self setLeftArrowButton:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:105 target:self action:@selector(selectPreviousField)]];
             [self.leftArrowButton setEnabled:NO];
@@ -65,6 +66,12 @@
             [self.segmentedControl setEnabled:NO forSegmentAtIndex:BSKeyboardControlsDirectionNext];
             [self setSegmentedControlItem:[[UIBarButtonItem alloc] initWithCustomView:self.segmentedControl]];
         }
+		#else
+		[self setLeftArrowButton:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:105 target:self action:@selector(selectPreviousField)]];
+		[self.leftArrowButton setEnabled:NO];
+		[self.rightArrowButton setEnabled:NO];
+		[self setRightArrowButton:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:106 target:self action:@selector(selectNextField)]];
+		#endif
         
         [self setDoneButton:[[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"Done", @"BSKeyboardControls", @"Done button title.")
                                                              style:UIBarButtonItemStyleDone
@@ -254,6 +261,7 @@
     NSInteger index = [self.fields indexOfObject:self.activeField];
     if (index != NSNotFound)
     {
+		#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
         if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
             [self.leftArrowButton setEnabled:(index > 0)];
             [self.rightArrowButton setEnabled:(index < [self.fields count] - 1)];
@@ -261,6 +269,10 @@
             [self.segmentedControl setEnabled:(index > 0) forSegmentAtIndex:BSKeyboardControlsDirectionPrevious];
             [self.segmentedControl setEnabled:(index < [self.fields count] - 1) forSegmentAtIndex:BSKeyboardControlsDirectionNext];
         }
+		#else
+		[self.leftArrowButton setEnabled:(index > 0)];
+		[self.rightArrowButton setEnabled:(index < [self.fields count] - 1)];
+		#endif
     }
 }
 
