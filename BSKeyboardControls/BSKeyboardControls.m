@@ -122,7 +122,7 @@
                     [activeField becomeFirstResponder];
                 }
             
-                [self updatePrevoidNextEnabledStates];
+                [self updatePreviousNextEnabledStates];
             }
         }
     }
@@ -256,7 +256,7 @@
     }
 }
 
-- (void)updatePrevoidNextEnabledStates
+- (void)updatePreviousNextEnabledStates
 {
     NSInteger index = [self.fields indexOfObject:self.activeField];
     if (index != NSNotFound)
