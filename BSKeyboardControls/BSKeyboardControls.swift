@@ -37,13 +37,13 @@ class BSKeyboardControls: UIView {
 			updateToolbar()
 		}
 	}
-	var fields: [UITextField] = [] {		// TODO: Support for UITextView too
+	var fields: [UIView] = [] {
 		didSet {
 			installOnFields()
 		}
 	}
 	
-	var activeField: UITextField? {
+	var activeField: UIView? {
 		didSet {
 			activeField?.becomeFirstResponder()
 			updatePreviousNextEnabledStates()
@@ -81,14 +81,14 @@ class BSKeyboardControls: UIView {
 		barStyle = .Default
 		toolbar.autoresizingMask = .FlexibleLeftMargin | .FlexibleRightMargin
 		addSubview(toolbar)
-
+		
 		previousButton = UIBarButtonItem(image: UIImage(named: "backbutton"), style: .Plain, target: self, action: "selectPreviousField")
 		nextButton = UIBarButtonItem(image: UIImage(named: "nextbutton"), style: .Plain, target: self, action: "selectNextField")
 		doneButton = UIBarButtonItem(title: "Done", style: .Done, target: self, action: "doneButtonPressed")
 		visibleControls = BSKeyboardControl(rawValue: BSKeyboardControl.PreviousNext.rawValue | BSKeyboardControl.Done.rawValue)!
 		
 		self.fields = fields
-
+		
 		// didSet observers not called from init()
 		installOnFields()
 		updateToolbar()
@@ -96,7 +96,13 @@ class BSKeyboardControls: UIView {
 	
 	func installOnFields() {
 		for field in fields {
-			field.inputAccessoryView = self
+			if let field = field as? UITextView {
+				field.inputAccessoryView = self
+			} else if let field = field as? UITextField {
+				field.inputAccessoryView = self
+			} else {
+				println("Field is not TextView or TextField: \(field)")
+			}
 		}
 	}
 	
@@ -106,7 +112,7 @@ class BSKeyboardControls: UIView {
 	
 	func toolbarItems() -> [AnyObject] {
 		var outItems = [AnyObject]()
-
+		
 		if visibleControls.rawValue & BSKeyboardControl.PreviousNext.rawValue > 0 {
 			outItems.append(previousButton)
 			outItems.append(nextButton)
@@ -135,7 +141,7 @@ class BSKeyboardControls: UIView {
 			}
 		}
 	}
-
+	
 	func selectNextField() {
 		if let index = find(fields, activeField!) {
 			if index < fields.count - 1 {
