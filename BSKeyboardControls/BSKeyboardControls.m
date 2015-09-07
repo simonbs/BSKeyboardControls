@@ -50,8 +50,8 @@
         if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1) {
             [self setLeftArrowButton:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:105 target:self action:@selector(selectPreviousField)]];
             [self.leftArrowButton setEnabled:NO];
-            [self.rightArrowButton setEnabled:NO];
             [self setRightArrowButton:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:106 target:self action:@selector(selectNextField)]];
+            [self.rightArrowButton setEnabled:NO];
             
         } else {
             [self setBarStyle:UIBarStyleBlackTranslucent];
@@ -69,8 +69,8 @@
 		#else
 		[self setLeftArrowButton:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:105 target:self action:@selector(selectPreviousField)]];
 		[self.leftArrowButton setEnabled:NO];
+        [self setRightArrowButton:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:106 target:self action:@selector(selectNextField)]];
 		[self.rightArrowButton setEnabled:NO];
-		[self setRightArrowButton:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:106 target:self action:@selector(selectNextField)]];
 		#endif
         
         [self setDoneButton:[[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"Done", @"BSKeyboardControls", @"Done button title.")
