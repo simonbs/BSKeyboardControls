@@ -11,21 +11,21 @@
 /**
  *  Available controls.
  */
-typedef enum
+typedef NS_OPTIONS(NSUInteger, BSKeyboardControl)
 {
     BSKeyboardControlPreviousNext = 1 << 0,
     BSKeyboardControlDone = 1 << 1
-} BSKeyboardControl;
+};
 
 /**
  *  Directions in which the fields can be selected.
  *  These are relative to the active field.
  */
-typedef enum
+typedef NS_ENUM(NSUInteger, BSKeyboardControlsDirection)
 {
     BSKeyboardControlsDirectionPrevious = 0,
     BSKeyboardControlsDirectionNext
-} BSKeyboardControlsDirection;
+};
 
 @protocol BSKeyboardControlsDelegate;
 
