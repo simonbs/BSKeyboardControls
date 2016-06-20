@@ -89,7 +89,7 @@
 - (void)dealloc
 {
     [self setFields:nil];
-    [self setSegmentedControlTintControl:nil];
+    [self setSegmentedControlTintColor:nil];
     [self setPreviousTitle:nil];
     [self setBarTintColor:nil];
     [self setNextTitle:nil];
@@ -168,13 +168,13 @@
     }
 }
 
-- (void)setSegmentedControlTintControl:(UIColor *)segmentedControlTintControl
+- (void)setSegmentedControlTintColor:(UIColor *)segmentedControlTintColor
 {
-    if (segmentedControlTintControl != _segmentedControlTintControl)
+    if (segmentedControlTintColor != _segmentedControlTintColor)
     {
-        [self.segmentedControl setTintColor:segmentedControlTintControl];
+        [self.segmentedControl setTintColor:segmentedControlTintColor];
         
-        _segmentedControlTintControl = segmentedControlTintControl;
+        _segmentedControlTintColor = segmentedControlTintColor;
     }
 }
 
