@@ -107,7 +107,7 @@
 #pragma mark -
 #pragma mark Public Methods
 
-- (void)setActiveField:(id)activeField
+- (void)setActiveField:(UIView *)activeField
 {
     if (activeField != _activeField)
     {
@@ -115,7 +115,7 @@
         {
             _activeField = activeField;
         
-            if (activeField)
+            if (activeField && ![activeField isHidden] && activeField.alpha > 0)
             {
                 if (![activeField isFirstResponder])
                 {
