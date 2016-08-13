@@ -99,6 +99,11 @@ typedef NS_ENUM(NSUInteger, BSKeyboardControlsDirection)
  */
 - (id)initWithFields:(NSArray *)fields;
 
+/**
+  Makes the next field the first responder.
+ */
+- (void)selectNextField;
+
 @end
 
 @protocol BSKeyboardControlsDelegate <NSObject>

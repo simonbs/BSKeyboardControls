@@ -81,6 +81,12 @@ enum
     [self.keyboardControls setActiveField:textField];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.keyboardControls selectNextField];
+    return YES;
+}
+
 #pragma mark -
 #pragma mark Text View Delegate
 
